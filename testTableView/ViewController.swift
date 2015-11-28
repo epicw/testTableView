@@ -20,11 +20,6 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     var name_From: String = ""
     var name_To: String = ""
     
-    var add_name_from = ""
-    var add_name_to = ""
-    var AddInfo:[String] = []
-    
-    var ShowFrinds:[String] = []
     /*let query = PFQuery(className: "FriendsInfo")
     let str: String = mySearchBar.text!
     query.whereKey("name", matchesRegex: "(?i)\(str)")
@@ -47,21 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let query = PFQuery(className: "InvitationObject")
-        query.whereKey("nameTo", equalTo: add_name_to)
-        query.findObjectsInBackgroundWithBlock{
-            (objects:[PFObject]?, error: NSError?)-> Void in
-            if error == nil{
-                print("successfully")
-                if let array = objects{
-                    for item in array{
-                        print(item)
-                        let fullName = item.objectForKey("nameFrom") as! String
-                        self.AddInfo.append(fullName)
-                    }
-                }
-            }
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return ShowFrinds.count
+        return searchResult.count
     }
     
     // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -79,10 +60,10 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = myTableView.dequeueReusableCellWithIdentifier("cell") as! FriendsTableViewCell
-        cell.nameLabel?.text = ShowFrinds[indexPath.row]
+        cell.nameLabel?.text = searchResult[indexPath.row]
         cell.cellButton.tag = indexPath.row
         cell.cellButton.addTarget(self, action: Selector("SendInvitationAction:"), forControlEvents: .TouchUpInside)
-        name_To = ShowFrinds[indexPath.row]
+        name_To = searchResult[indexPath.row]
         return cell
     }
     

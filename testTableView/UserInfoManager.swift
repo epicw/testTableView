@@ -16,7 +16,7 @@ class UserInfoManager: NSObject{
     
     class func getInstance()->UserInfoManager{
         if(sharedInstance.database == nil){
-            sharedInstance.database = FMDatabase(path: Util.getPath("UserInfo.sqlite"))
+            sharedInstance.database = FMDatabase(path: Util.getPath("friendslist.sqlite"))
         }
         return sharedInstance
     }
@@ -47,6 +47,34 @@ class UserInfoManager: NSObject{
         let isInserted = sharedInstance.database!.executeUpdate("INSERT INTO userTable (UserName,Password) VALUES (?,?)", withArgumentsInArray: [name, password])
         sharedInstance.database!.close()
         return isInserted
+    }
+    
+    func saveNewFriend(nameFrom: String, nameTo: String) -> Bool{
+        sharedInstance.database!.open()
+        let isInserted = sharedInstance.database!.executeUpdate("INSERT INTO friendsTable (hostName,friendName) VALUES (?,?)", withArgumentsInArray: [nameFrom, nameTo])
+        sharedInstance.database!.close()
+        
+        //getAllFriends(nameFrom)
+        
+        return isInserted
+    }
+    
+    func getAllFriends(hostName: String) -> [String]{
+        sharedInstance.database!.open()
+        
+        let querySQL = "SELECT * FROM friendsTable where hostName = '\(hostName)'"
+        let results: FMResultSet? = sharedInstance.database!.executeQuery(querySQL, withArgumentsInArray: nil)
+        var friendsname:[String] = []
+        if(results != nil){
+            while results!.next(){
+                let friend_name = results!.stringForColumn("friendName")
+                friendsname.append(friend_name)
+                //print(friend_name)
+            }
+        }
+        sharedInstance.database!.close()
+        printString(friendsname)
+        return friendsname
     }
     
     func logInFunction(name: String, password: String) -> Bool{

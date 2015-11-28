@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class FriendsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -18,16 +19,15 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     var array1:[String: [String]] = ["Weiqi": ["Yebin", "Mingming"]]
     var array2:[String: [String]] = ["Hao": ["Wen", "Shuai"]]
     
+    var confirmArray:[String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(incomming_name)
-        /*if incomming_name == "Weiqi"{
-            friendsList = array1[incomming_name]!
-        }
-        else if incomming_name == "Hao"{
-            friendsList = array2[incomming_name]!
-        }*/
-        // Do any additional setup after loading the view.
+        getInvitationResultOnline()
+        //UserInfoManager.getInstance().saveNewFriend("Weiqi Wei", nameTo: "Guoshan Liu")
+        friendsList += UserInfoManager.getInstance().getAllFriends(incomming_name)
+        //print("friend number: \(friendsList.count)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,8 +68,54 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
         return cell!
     }
     
-    @IBAction func unwindFromAddView(segue: UIStoryboardSegue){
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "segueToInvitation"{
+            let nextViewController = (segue.destinationViewController as! UINavigationController).topViewController as! ShowInvitationViewController
+            nextViewController.add_name_to = incomming_name
+        }
     }
     
+    @IBAction func unwindFromInvitation(segue: UIStoryboardSegue){
+        let source = segue.sourceViewController as! ShowInvitationViewController
+        friendsList += source.confirmList
+        confirmArray = source.confirmList
+        let strArray = source.confirmList
+        if source.confirmList.count > 0{
+            for item in strArray{
+                dispatch_async(dispatch_get_main_queue()){
+                    UserInfoManager.getInstance().saveNewFriend(self.incomming_name, nameTo: item)
+                    
+                }
+            }
+        }        
+        dispatch_async(dispatch_get_main_queue()){
+            self.myTableView.reloadData()
+        }
+    }
+    
+    func getInvitationResultOnline(){
+        let query = PFQuery(className: "InvitationObject")
+        query.whereKey("nameFrom", equalTo: incomming_name)
+        query.findObjectsInBackgroundWithBlock{
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil{
+                print("Successfully")
+                if let array = objects{
+                    for item in array{
+                        let name_to = item.objectForKey("nameTo") as! String
+                        let hasAdded = item.objectForKey("hasAdded") as! String
+                        let id = item.objectId
+                        if hasAdded == "1"{
+                            self.friendsList.append(name_to)
+                            let obj = PFObject.init(withoutDataWithClassName: "InvitationObject", objectId: id)
+                            obj.deleteEventually()
+                        }
+                    }
+                }
+            }
+            dispatch_async(dispatch_get_main_queue()){
+                self.myTableView.reloadData()
+            }
+        }
+    }
 }

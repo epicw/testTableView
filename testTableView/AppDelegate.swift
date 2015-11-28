@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        Util.copyFile("friendslist.sqlite")
+        
         Parse.setApplicationId("2FJcyZIv8WlvXCokXRKhUPfKRVH3kl1TLasEW8GE",
             clientKey: "cpJr5DgL3k1lBDbGJCfGG3wA32hTg5elIVvaWYa4")
         

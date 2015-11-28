@@ -29,6 +29,18 @@
 		3E3257591C0809F500F48FFD /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3257581C0809F500F48FFD /* FriendsTableViewCell.swift */; };
 		3E32575E1C08144D00F48FFD /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E32575D1C08144D00F48FFD /* FriendsListViewController.swift */; };
 		3E3257641C08149E00F48FFD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3257631C08149E00F48FFD /* LoginViewController.swift */; };
+		3E8394091C08B7CD005DEF2C /* ShowInvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8394081C08B7CD005DEF2C /* ShowInvitationViewController.swift */; };
+		3E83940B1C08C47D005DEF2C /* InvitationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E83940A1C08C47D005DEF2C /* InvitationTableViewCell.swift */; };
+		3E8394111C08FC03005DEF2C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8394101C08FC03005DEF2C /* Util.swift */; };
+		3E8394131C08FC0B005DEF2C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8394121C08FC0B005DEF2C /* UserInfo.swift */; };
+		3E8394151C08FC10005DEF2C /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8394141C08FC10005DEF2C /* UserInfoManager.swift */; };
+		3E8394351C090593005DEF2C /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E83942B1C090593005DEF2C /* FMDatabase.m */; };
+		3E8394361C090593005DEF2C /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E83942D1C090593005DEF2C /* FMDatabaseAdditions.m */; };
+		3E8394371C090593005DEF2C /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E83942F1C090593005DEF2C /* FMDatabasePool.m */; };
+		3E8394381C090593005DEF2C /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8394311C090593005DEF2C /* FMDatabaseQueue.m */; };
+		3E8394391C090593005DEF2C /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8394341C090593005DEF2C /* FMResultSet.m */; };
+		3E83943E1C0907F0005DEF2C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E83943D1C0907F0005DEF2C /* libsqlite3.0.tbd */; };
+		3E8394A41C09390B005DEF2C /* friendslist.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3E8394A31C09390B005DEF2C /* friendslist.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +89,25 @@
 		3E3257581C0809F500F48FFD /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		3E32575D1C08144D00F48FFD /* FriendsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
 		3E3257631C08149E00F48FFD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3E8394081C08B7CD005DEF2C /* ShowInvitationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInvitationViewController.swift; sourceTree = "<group>"; };
+		3E83940A1C08C47D005DEF2C /* InvitationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationTableViewCell.swift; sourceTree = "<group>"; };
+		3E8394101C08FC03005DEF2C /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		3E8394121C08FC0B005DEF2C /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		3E8394141C08FC10005DEF2C /* UserInfoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
+		3E8394271C08FD07005DEF2C /* testTableView-bridge-swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "testTableView-bridge-swift.h"; sourceTree = "<group>"; };
+		3E83942A1C090593005DEF2C /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		3E83942B1C090593005DEF2C /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		3E83942C1C090593005DEF2C /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		3E83942D1C090593005DEF2C /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		3E83942E1C090593005DEF2C /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		3E83942F1C090593005DEF2C /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		3E8394301C090593005DEF2C /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		3E8394311C090593005DEF2C /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		3E8394321C090593005DEF2C /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		3E8394331C090593005DEF2C /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		3E8394341C090593005DEF2C /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		3E83943D1C0907F0005DEF2C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		3E8394A31C09390B005DEF2C /* friendslist.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = friendslist.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E83943E1C0907F0005DEF2C /* libsqlite3.0.tbd in Frameworks */,
 				3E3257571C07916E00F48FFD /* libsqlite3.tbd in Frameworks */,
 				3E3257551C07915E00F48FFD /* libz.tbd in Frameworks */,
 				3E3257531C07915500F48FFD /* SystemConfiguration.framework in Frameworks */,
@@ -119,6 +151,7 @@
 		3E3257061C078AB100F48FFD = {
 			isa = PBXGroup;
 			children = (
+				3E83943D1C0907F0005DEF2C /* libsqlite3.0.tbd */,
 				3E3257561C07916E00F48FFD /* libsqlite3.tbd */,
 				3E3257541C07915E00F48FFD /* libz.tbd */,
 				3E3257521C07915500F48FFD /* SystemConfiguration.framework */,
@@ -151,6 +184,11 @@
 		3E3257111C078AB100F48FFD /* testTableView */ = {
 			isa = PBXGroup;
 			children = (
+				3E8394291C090593005DEF2C /* fmdb */,
+				3E8394141C08FC10005DEF2C /* UserInfoManager.swift */,
+				3E8394121C08FC0B005DEF2C /* UserInfo.swift */,
+				3E8394101C08FC03005DEF2C /* Util.swift */,
+				3E8394A31C09390B005DEF2C /* friendslist.sqlite */,
 				3E3257121C078AB100F48FFD /* AppDelegate.swift */,
 				3E3257141C078AB100F48FFD /* ViewController.swift */,
 				3E3257161C078AB100F48FFD /* Main.storyboard */,
@@ -160,6 +198,9 @@
 				3E32571B1C078AB100F48FFD /* LaunchScreen.storyboard */,
 				3E32571E1C078AB100F48FFD /* Info.plist */,
 				3E3257631C08149E00F48FFD /* LoginViewController.swift */,
+				3E8394081C08B7CD005DEF2C /* ShowInvitationViewController.swift */,
+				3E83940A1C08C47D005DEF2C /* InvitationTableViewCell.swift */,
+				3E8394271C08FD07005DEF2C /* testTableView-bridge-swift.h */,
 			);
 			path = testTableView;
 			sourceTree = "<group>";
@@ -180,6 +221,24 @@
 				3E3257341C078AB100F48FFD /* Info.plist */,
 			);
 			path = testTableViewUITests;
+			sourceTree = "<group>";
+		};
+		3E8394291C090593005DEF2C /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				3E83942A1C090593005DEF2C /* FMDatabase.h */,
+				3E83942B1C090593005DEF2C /* FMDatabase.m */,
+				3E83942C1C090593005DEF2C /* FMDatabaseAdditions.h */,
+				3E83942D1C090593005DEF2C /* FMDatabaseAdditions.m */,
+				3E83942E1C090593005DEF2C /* FMDatabasePool.h */,
+				3E83942F1C090593005DEF2C /* FMDatabasePool.m */,
+				3E8394301C090593005DEF2C /* FMDatabaseQueue.h */,
+				3E8394311C090593005DEF2C /* FMDatabaseQueue.m */,
+				3E8394321C090593005DEF2C /* FMDB.h */,
+				3E8394331C090593005DEF2C /* FMResultSet.h */,
+				3E8394341C090593005DEF2C /* FMResultSet.m */,
+			);
+			path = fmdb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E32571D1C078AB100F48FFD /* LaunchScreen.storyboard in Resources */,
+				3E8394A41C09390B005DEF2C /* friendslist.sqlite in Resources */,
 				3E32571A1C078AB100F48FFD /* Assets.xcassets in Resources */,
 				3E3257181C078AB100F48FFD /* Main.storyboard in Resources */,
 			);
@@ -315,9 +375,19 @@
 			files = (
 				3E3257591C0809F500F48FFD /* FriendsTableViewCell.swift in Sources */,
 				3E32575E1C08144D00F48FFD /* FriendsListViewController.swift in Sources */,
+				3E8394371C090593005DEF2C /* FMDatabasePool.m in Sources */,
+				3E8394381C090593005DEF2C /* FMDatabaseQueue.m in Sources */,
+				3E8394151C08FC10005DEF2C /* UserInfoManager.swift in Sources */,
+				3E83940B1C08C47D005DEF2C /* InvitationTableViewCell.swift in Sources */,
+				3E8394111C08FC03005DEF2C /* Util.swift in Sources */,
+				3E8394091C08B7CD005DEF2C /* ShowInvitationViewController.swift in Sources */,
 				3E3257151C078AB100F48FFD /* ViewController.swift in Sources */,
+				3E8394391C090593005DEF2C /* FMResultSet.m in Sources */,
 				3E3257641C08149E00F48FFD /* LoginViewController.swift in Sources */,
+				3E8394131C08FC0B005DEF2C /* UserInfo.swift in Sources */,
+				3E8394351C090593005DEF2C /* FMDatabase.m in Sources */,
 				3E3257131C078AB100F48FFD /* AppDelegate.swift in Sources */,
+				3E8394361C090593005DEF2C /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +537,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.duke.-Physaologists.testTableView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./testTableView/testTableView-bridge-swift.h";
 			};
 			name = Debug;
 		};
@@ -482,6 +553,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.duke.-Physaologists.testTableView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./testTableView/testTableView-bridge-swift.h";
 			};
 			name = Release;
 		};

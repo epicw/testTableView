@@ -36,10 +36,10 @@ class Util: NSObject {
                 error = error1
             }
             
-            if error == nil{
+            /*if error == nil{
                 print("database does not copy successfully")
             }
-           /* let alert: UIAlertView = UIAlertView()
+            let alert: UIAlertView = UIAlertView()
             if (error != nil) {
                 alert.title = "Error Occured"
                 alert.message = error?.localizedDescription
@@ -53,7 +53,7 @@ class Util: NSObject {
         }
     }
     
-    /*class func invokeAlertMethod(strTitle: NSString, strBody: NSString, delegate: AnyObject?)
+    class func invokeAlertMethod(strTitle: NSString, strBody: NSString, delegate: AnyObject?)
     {
         var alert: UIAlertView = UIAlertView()
         alert.message = strBody as String
@@ -61,7 +61,7 @@ class Util: NSObject {
         alert.delegate = delegate
         alert.addButtonWithTitle("Ok")
         alert.show()
-    }*/
+    }
     
     
 }

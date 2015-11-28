@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        userNameText.text = "Weiqi Wei"
         // Do any additional setup after loading the view.
         loginButton.addTarget(self, action: Selector("login:"), forControlEvents: .TouchUpInside)
     }
