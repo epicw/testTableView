@@ -20,25 +20,6 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     var name_From: String = ""
     var name_To: String = ""
     
-    /*let query = PFQuery(className: "FriendsInfo")
-    let str: String = mySearchBar.text!
-    query.whereKey("name", matchesRegex: "(?i)\(str)")
-    
-    query.findObjectsInBackgroundWithBlock{
-    (objects:[PFObject]?, error: NSError?)-> Void in
-    if error == nil{
-    print("successfully")
-    if let array = objects{
-    for item in array{
-    print(item)
-    let fullName = item.objectForKey("name") as! String
-    self.searchResult.append(fullName)
-    }
-    }
-    }
-    }
-    */
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,9 +34,6 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return searchResult.count
     }
-    
-    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
@@ -75,22 +53,6 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         mySearchBar.resignFirstResponder()
-        
-        
-        /*let query = PFQuery(className: "TestObject")
-        query.whereKey("foo", equalTo: "\(mySearchBar.text)")
-        
-        query.findObjectsInBackgroundWithBlock{
-            (objects:[PFObject]?, error: NSError?)-> Void in
-            if error == nil{
-                print("successfully")
-                if let arrays = objects{
-                    for item in objects!{
-                        print(item)
-                    }
-                }
-            }
-        }*/
         
         let query = PFQuery(className: "FriendsInfo")
         let str: String = mySearchBar.text!
@@ -120,18 +82,8 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         mySearchBar.resignFirstResponder()
         mySearchBar.text = ""
     }
-    /*let FriendObject = PFObject(className: "FriendsInfo")
-    let acl = PFACL()
-    acl.publicWriteAccess = true
-    acl.publicReadAccess = true
-    FriendObject.ACL = acl
     
-    FriendObject["name"] = "Weiqi Wei"
-    FriendObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-    print("Object has been saved.")
-    }*/
-    
-    func SaveInvitation(nameFrom:String, nameTo: String){
+    func SaveInvitation(nameFrom: String, nameTo: String){
         let InvitationObject = PFObject(className: "InvitationObject")
         let acl = PFACL()
         acl.publicReadAccess = true
